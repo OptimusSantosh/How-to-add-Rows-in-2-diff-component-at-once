@@ -1,9 +1,4 @@
-<p>
-table-one works!
-</p>
-
-
-<p-table [columns]="cols" [value]="cars" [(contextMenuSelection)]="selectedCar" [contextMenu]="cm">
+<p-table [columns]="cols" [value]="addressData" [(contextMenuSelection)]="selectedValue" [contextMenu]="cm">
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns">
@@ -11,10 +6,10 @@ table-one works!
             </th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-rowData let-columns="columns">
-        <tr [pContextMenuRow]="rowData">
+    <ng-template pTemplate="body" let-addressData let-columns="columns">
+        <tr [pContextMenuRow]="addressData">
             <td *ngFor="let col of columns">
-                {{rowData[col.field]}}
+                {{addressData[col.field]}}
             </td>
         </tr>
     </ng-template>
